@@ -16,6 +16,7 @@ header{
     border: 1px solid #f3f3f3;
     padding-top: 20px;
     padding-bottom: 20px;
+
  
 
 }
@@ -47,11 +48,97 @@ nav ul{
     justify-content: center;
     flex: 1;
 }
+
 nav ul li a{
     text-decoration: none;
     color:#000;
     font-size: 12px;
 }
+nav ul li{
+   display: flex;
+}
+.locationsDropDown{
+    background-color: #fff;
+    z-index: 1000;
+    position: fixed;
+    overflow: hidden;
+    left: 22.5%;
+    top:7%;
+    width: 15%;
+    display:none;
+
+}
+.fa-chevron-down{
+    font-size: 12px;
+    text-shadow: 0.5px 0 currentColor, -0.5px 0 currentColor;
+    transition: transform 0.3s ease;
+    
+}
+.fa-chevron-down.rotate{
+    transform: rotate(180deg);
+}
+.locationsDropDown ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    list-style: none;
+    padding: 20px;
+    
+}
+
+.locationsDropDown ul li a{
+    text-decoration: none;
+    color: #000;
+    padding:10px;
+    font-family: 'Courier New', Courier, monospace;
+ 
+}
+.locationsDropDown ul li a:hover{
+    background-color: #f3f3f3;
+
+}
+
+.servicesDropDown{
+     background-color: #fff;
+    z-index: 1000;
+    position: fixed;
+    overflow: hidden;
+    left: 28.9%;
+    top:7%;
+    width: 20%;
+    display: none;
+   
+}
+.servicesDropDown ul{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    list-style: none;
+}
+.servicesDropDown ul li a{
+   text-decoration: none;
+    color: #000;
+     font-family: 'Courier New', Courier, monospace;
+    padding: 10px;
+}
+.servicesDropDown ul li a:hover{
+    background-color: #f3f3f3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .icons-style{
     display: flex;
     gap:15px;
