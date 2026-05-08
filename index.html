@@ -54,9 +54,15 @@
 
         <div class="servicesDropDown">
          <ul>
-          <li><a href="#">Residential Move</a></li> 
-          <li><a href="#">Commercial move</a></li> 
-          <li><a href="#">Long-Distance move</a></li>
+          <li><a href="#" id="residentialBtn">Residential Move <i class="fa-solid fa-chevron-down "></i></a></li> 
+          <div class="commercialDistance">
+             <li><a href="commercialMove.html">Commercial move</a></li> 
+             <li><a href="longDistance.html">Long-Distance move</a></li>
+          </div>
+          <div class="houseApartment">
+            <li><a href="residentialMove.html">House moving</a></li>
+          <li><a href="apartmentMovers.html">Apartment moving</a></li>
+          </div>
          </ul>
         </div>
       
@@ -78,11 +84,12 @@
         <form>
           <input type="text" name="Address" placeholder="Address from(with postal code)" required>
           <input type="text" name="Address" placeholder="Address to(with postal code)" required>
-          <input type="button" name="button" value="GET Free Quote" required>
+          <input type="button" name="button" value="GET Free Quote" id="openForm" required>
         </form>
       </div>
 
       </div>
+       
 
       <div class="images">
         <img class="image1"src="Images/68a4d62008629f615e5576d8_img_02.avif" alt="image">
@@ -116,7 +123,7 @@
     <li>✔ No deposit, no fuel surcharge, no surprise fees</li>
   </ul>
 
-  <button class="cta">Get Free Quote</button>
+  <input type="button" id="openForm" class="cta"  value="Get Free Quote">
 
 </section>
 
@@ -223,40 +230,68 @@
 
   
      <div class="residential-images">
-      <div class="moves">
+      <div class="moves" data-page="residentialMovers">
         <h1>Residential <br> move</h1>
             <p>Moving to a new home should be exciting, not stressful.
               At Moovy, our licensed and insured crew handles every aspect of your house move
               with excellent care, from packing to delivery across Toronto and the GTA.</p>
-              <img src="Images/68d307a6631d75a15b486773_Rectangle 161123768.avif" alt="images">
-              
+              <div class="linkArrow">
+                <img src="Images/68d307a6631d75a15b486773_Rectangle 161123768.avif" alt="images">
+                <div class="imageArrow">
+                    <span class="arrowContainer"><a href="residentialMove.html"><img src="iconsandImage/right_Arrow 4.svg"></a></span>
+                </div>
+    
+              </div>
+            
       </div>
-      <div class="moves"><h1>Apartment <br>Moving</h1>
+      <div class="moves" data-page="apartmentMovers"><h1>Apartment <br>Moving</h1>
             <p>Apartment moves sound simple— until narrow hallways, elevators, and 
               strict building rules get in the way.
                At Moovy, we specialize in helping residents relocate
-                smoothly with our professional apartment moving services across Toronto and the </p>
-               <img src="Images/68d16ddfc02e9116610e44a2_Fotos-Canada-Toronto-002 1.avif" alt="images">
+                smoothly with our professional apartment moving services across  </p>
+                <div class="linkArrow">
+                <img src="Images/68d16ddfc02e9116610e44a2_Fotos-Canada-Toronto-002 1.avif" alt="images">
+                <div class="imageArrow">
+                    <span class="arrowContainer"><a href="#"><img src="iconsandImage/right_Arrow 4.svg"></a></span>
+                </div>
+    
               </div>
-      <div class="moves">
+              </div>
+      <div class="moves" data-page="commercialMovers">
         <h1>commercial  <br> Relocations</h1>
         <p>Moving to a new home should be exciting, not stressful.
            At Moovy, our licensed and insured crew handles every aspect of your house move
           with excellent care, from packing to delivery across Toronto and the GTA </p>
-              <img src="Images/68d305d51e9ea4d1282f0cee_Fotos-Canada-Toronto-002 2.avif" alt="images">
+               <div class="linkArrow">
+                  <img src="Images/68d305d51e9ea4d1282f0cee_Fotos-Canada-Toronto-002 2.avif" alt="images">
+                <div class="imageArrow">
+                    <span class="arrowContainer"><a href="#"><img src="iconsandImage/right_Arrow 4.svg"></a></span>
+                </div>
+    
+              </div>
           
       </div>
-       <div class="moves">
+       <div class="moves" data-page="longDistance">
         <h1>Long-distance <br> relocations</h1>
         <p>Moving to a new home should be exciting, not stressful.
            At Moovy, our licensed and insured crew handles every aspect of your house move
-          with excellent care, from packing to delivery across Toronto </p>
+          with excellent care, from packing to delivery across Toronto house move </p>
+          <div class="linkArrow">
              <img src="Images/68d1787d656f39038a3d17ee_Rectangle 46.avif" alt="images">
+                <div class="imageArrow">
+                    <span class="arrowContainer"><a href="#"><img src="iconsandImage/right_Arrow 4.svg"></a></span>
+                </div>
           
       </div>
 
       </div>
+  
+      </div>
 
+  </section>
+    <section class="moving-services ">
+  
+     
       <div class="hire">
         <div class="brackets">
           <p>(</p>
@@ -268,7 +303,6 @@
               depending on how many items you’re moving. Pay only for the helping
                hands you really need! All moving services include a dedicated crew,
                protective materials, and transparent hourly pricing.</p>
-
       </div>
 
   </section>
@@ -588,6 +622,78 @@
 
   </footer>
 
+</div>
+
+<div class="overlay" id="overlay">
+  <div class="modal">
+     <span class="close-btn"  id="closeModal">&times;</span>
+
+    <div class="estimate-container">
+      <h1 class="estimate-title">GET A FREE ESTIMATE</h1>
+
+      <form class="estimate-form">
+
+        <div class="form-group">
+          <label class="form-label">RESIDENCE DETAILS<span>*</span></label>
+          <select class="form-input">
+            <option>Type of residence</option>
+            <option>Apartment</option>
+            <option>Condo</option>
+            <option>House</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">DATE<span>*</span></label>
+          <input class="form-input" type="date" required>
+        </div>
+
+        <div class="form-group">
+          <select class="form-input">
+            <option>Number of Bedrooms</option>
+            <option>Studio</option>
+            <option>1 Bedroom</option>
+            <option>2 Bedrooms</option>
+            <option>3 Bedrooms</option>
+            <option>4+ Bedrooms</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">CONTACT INFORMATION<span>*</span></label>
+          <input class="form-input" type="text" placeholder="Full Name" required>
+        </div>
+
+        <div class="form-group">
+           <label class="form-label loca" >MOVE LOCATIONS<span>*</span></label>
+          <input class="form-input" type="text" placeholder="Pick Up Location / Postal Code" required>
+        </div>
+
+        <div class="form-group">
+          <input class="form-input" type="email" placeholder="Email" required>
+        </div>
+
+        <div class="form-group">
+          <input class="form-input" type="text" placeholder="Drop Off Location / Postal Code" required>
+        </div>
+
+        <div class="form-group">
+          <input class="form-input" type="text" placeholder="Phone number" required>
+        </div>
+
+        <!-- <div class="checkbox-group">
+          <label><input type="checkbox" required>I’m not a robot </label>
+        </div> -->
+
+        <div class="form-group full-width">
+          <input class="submit-btn" type="submit" value="Submit">
+        </div>
+
+      </form>
+    </div>
+
+  </div>
 </div>
 
 
