@@ -133,6 +133,8 @@ residentialBtn.addEventListener("click", function(e){
   });
 
 
+
+
   document.querySelectorAll('.faq-header').forEach(header => {
     header.addEventListener('click', () => {
       const item = header.parentElement;
@@ -205,18 +207,210 @@ document.addEventListener("click", (e) => {
     }
   });
 
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const loads = document.querySelectorAll(".load");
+    const buttonLoad = document.querySelector("#loadButton");
+    const removeB = document.querySelector(".removeButton");
+    const childrenMov = document.querySelectorAll(".children");
+    const steps = document.querySelectorAll(".showStep");
+    const cards = document.querySelectorAll(".contactUs");
+
+    
+    let isScrolling = false;
+    let currentIndex =0;
+    let lastScroll = 0;
+    updateUI(currentIndex);
+
+
+
+        if (buttonLoad) {
+            buttonLoad.addEventListener("click", () => {
+              loads.forEach(load => load.style.display = "grid");
+
+              buttonLoad.style.display = "none";
+              if (removeB) removeB.style.display = "none";
+            });
+          }
+
+    childrenMov.forEach(child =>{
+      child.addEventListener("click", () =>{
+        const page = child.dataset.mov;
+
+        if(page === "Moving with children")
+        {
+          window.location.href = "movingWithChildren.html";
+        }
+        else if(page === "townhouse vs duplex")
+        {
+          window.location.href = "townhouse.html";
+        }
+        else if(page === "diy vs professional movers")
+        {
+          window.location.href = "professionalMovers.html";
+        }
+        else if(page === "how to pack")
+        {
+          window.location.href = "howToPack.html";
+        }
+      });
+    });
+
+    document.addEventListener("scroll", () => {
+
+   if (isScrolling) return;
+
+    const currentScroll = window.scrollY;
+
+    if (currentScroll > lastScroll) {
+        // DOWN
+        if (currentIndex < steps.length - 1) {
+            currentIndex++;
+            updateUI(currentIndex);
+        }
+    } else {
+        // UP
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateUI(currentIndex);
+        }
+    }
+
+    lastScroll = currentScroll;
+
+    isScrolling = true;
+
+    setTimeout(() => {
+        isScrolling = false;
+    }, 400);
+});
+
+function updateUI(index) {
+
+    // Steps
+    steps.forEach((step, i) => {
+        step.classList.remove("activeStep");
+
+        if (i <= index) {
+            step.classList.add("activeStep");
+        }
+    });
+
+    // Cards
+    cards.forEach((card, i) => {
+        card.classList.remove("activeCard");
+
+        if (i <= index) {
+            card.classList.add("activeCard");
+        }
+    });
+
+}
+
+let lastScrolling = 0;
+let scrolls = false;
+ const stickyButton = document.querySelector(".stickButton");
+  const chooseM = document.querySelector(".choose");
+    const vector = document.querySelector(".vectorImg");
+
+document.addEventListener("scroll", ()=>{
+
+   if (!stickyButton) {
+        console.error("stickyButton not found on this page");
+        return;
+    }
+
+    window.addEventListener("scroll", () => {
+
+        const currentScrolling = window.scrollY;
+
+        if (currentScrolling === 0) {
+            stickyButton.classList.remove("showButton");
+        } else {
+            stickyButton.classList.add("showButton");
+        }
+    });
+
 
 });
 
 
-fetch("header.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("header").innerHTML = data;
-  });
+    let lastScrollY = window.scrollY;
+    let currentY = 0;
+     const minY = 0;      // top limit
+    const maxY = 570; 
+window.addEventListener("scroll", () => {
+         const scrollY = window.scrollY;
 
-fetch("footer.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("footer").innerHTML = data;
-  });
+        // how fast you're scrolling
+        const speed = scrollY - lastScrollY;
+
+        // accumulate movement
+        currentY += speed * 1.0; // adjust sensitivity here
+          if (currentY < minY) currentY = minY;
+        if (currentY > maxY) currentY = maxY;
+        // apply movement
+
+        if (!vector) {
+             console.log("vectorImg not found on this page");
+        } else {
+          vector.style.transform = `translateY(${currentY}px)`;
+        }
+
+
+        lastScrollY = scrollY;
+});
+
+
+
+
+    
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// fetch("header.html")
+//   .then(res => res.text())
+//   .then(data => {
+//     document.getElementById("header").innerHTML = data;
+//   });
+
+// fetch("footer.html")
+//   .then(res => res.text())
+//   .then(data => {
+//     document.getElementById("footer").innerHTML = data;
+//   });

@@ -40,7 +40,7 @@ header{
 .wrapper {
     /* max-width: 1400px; */
     margin: 0 auto; 
-    padding: 0 80px;
+    padding: 0 70px;
 }
 body {
   background-color:#f3f3f3;
@@ -74,20 +74,24 @@ nav ul li a{
 nav ul li{
    display: flex;
 }
+
 .locationsDropDown{
     background-color: #fff;
     z-index: 1000;
     position: fixed;
     overflow: hidden;
-    left: 22.5%;
     top:7%;
-    width: 15%;
+    width: 220px;
     display:none;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    pointer-events: none;
+    transition: 0.8s ease;
+       transform: translateX(270px);
     
 
 }
 .fa-chevron-down{
-    font-size: 12px;
+    font-size: 10px;
     text-shadow: 0.5px 0 currentColor, -0.5px 0 currentColor;
     transition: transform 0.3s ease;
     
@@ -124,10 +128,11 @@ nav ul li{
     z-index: 1000;
     position: fixed;
     overflow: hidden;
-    left: 28.9%;
+    margin-left: 355px;
     top:7%;
-    width: 20%;
+    width: 210px;
     display: none;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
    
 }
 .servicesDropDown ul{
@@ -166,12 +171,22 @@ nav ul li{
 .icons p{
     font-size: 12px;
 }
-.icons-style a{
-    background-color: #000;
-    padding: 2px;
-    border-radius: 50px;
-    border: 1px solid #000;
+
+.new-icon{
+     width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 1px;
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
 }
+.new-icon img{
+    width: 85%;
+}
+
 
 .home-page{
     padding-top: 90px;
@@ -186,7 +201,7 @@ nav ul li{
     position: relative;
     z-index: 2;
     margin-top: 100vh;
-     background:#f3f3f3;
+    background:#f3f3f3;
 }
 .home-page h2{
     color: #000;
@@ -415,16 +430,54 @@ select.form-input {
 .rating {
     display: flex;
     align-items: center;
-    gap: 10px;
     background: #f5f5c5;
-    padding: 10px 20px;
+    padding: 15px 40px;
+    padding-bottom: 1px;
     border-radius: 6px;
     margin-bottom: 30px;
+    max-width: 180px;
 }
-
+.rating  .ratingImg{
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    display: block;
+    margin-left: -45px;
+    margin-top: -12px;
+}
 .rating .g {
     font-weight: bold;
     font-size: 20px;
+}
+.rating p{
+    font-size: 15px;
+}
+.rating-content p {
+    margin: 0;
+    padding: 0;
+}
+.rating-content{
+    margin-left: -40px;
+}
+
+.rating-title {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 2px; 
+}
+.stars img{
+    width: 80px;
+    height: 10px;
+    max-width: 80px;
+    max-height: 10px;
+    object-fit: contain;
+}
+.stars {
+   display: flex;
+    align-items: center;
+    color: goldenrod;
+    font-size: 15px;
+    gap: 6px; /
 }
 .big-text {
     font-size: 200px;
@@ -484,6 +537,7 @@ select.form-input {
 }
 .local h1{
     font-size: 50px;
+    text-transform: uppercase;
 }
 
 .videos{
@@ -528,6 +582,7 @@ body {
   font-size: 250px;
   color: #dcdcdc;
   font-weight: bolder;
+  -webkit-text-stroke: 15px #dcdcdc;
 }
 
 .stat h3 {
@@ -561,6 +616,7 @@ body {
 .services .theory h1{
     font-size: 50px;
     font-weight: bolder;
+    text-transform: uppercase;
    
 }
 .moving-services{
@@ -630,11 +686,11 @@ body {
   width: 0%;
 
 }
-.moves img{
+/* .moves img{
     width: 100%;
     max-height: 180px;
     margin-top: 30px;
-}
+} */
 .moves:hover{
     cursor: pointer;
     background-color: #E5E15A;
@@ -1006,13 +1062,17 @@ body {
 .faq-item.active .faq-content{
     max-height: 200px; 
 }
-
+.faq-header h2{
+        font-weight: 200;
+        text-transform: uppercase;
+}
 .footer{
-    background: #111;
+    background: hsl(0, 0%, 7%);
     color: #fff;
-    padding: 60px 70px 30px;
+    padding: 40px 70px 30px;
     font-family: 'Montserrat', sans-serif;
     bottom: 0;
+    height: 340px;
   
   
 }
@@ -1066,7 +1126,7 @@ body {
 
 .footer-bottom{
     border-top: 1px solid #333;
-    margin-top: 40px;
+    margin-top: 10px;
     padding-top: 20px;
     display: flex;
     justify-content: space-between;
@@ -1118,6 +1178,7 @@ h1, p {
 }
 .residential p{
     width: 500px;
+    text-align: center;
 }
 .residential {
   max-width: 500px;
@@ -1125,7 +1186,6 @@ h1, p {
 
 .houseRes img {
   max-width: 100%;
-  /* height: auto; */
   height: 500px;
   display: block;
 }
@@ -1524,12 +1584,50 @@ Apartment Movers  css*/
     background-color: #E5E15A;
     margin-top: 0px;
 }
-.stickButton{
-    position:fixed;
+.stickButton {
+    position: fixed;
     right: 20px;
     bottom: 30px;
     z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: scale(0.7) translateY(20px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        visibility 0s linear 0.8s;
 }
+.resMov{
+    position: absolute;
+}
+
+.stickButton input, .aboutBt input{
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.stickButton.showButton {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: scale(1) translateY(0);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        visibility 0s;
+}
+
+ .aboutBt{
+    position: fixed;
+    right: 20px;
+    bottom: 30px;
+    z-index: 1000;
+} 
 
 /* 
 commercial movers */
@@ -1744,6 +1842,12 @@ distance movers */
 .workContainer{
     margin-top: 100px;
 }
+.stepC{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 .workContainer h1{
     display: flex;
     align-items: center;
@@ -1753,28 +1857,24 @@ distance movers */
 
 .works{
   display: flex;
-  padding: 70px;
-  align-items: flex-start;
-  justify-content: center;
+  flex-direction: column;
+  position: relative;
   gap:40px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+ 
  
 }
-.flowPictures{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-.flowPictures img{
-    width:35%;
-}
-.flowPictures{
-    width: 45%;
-}
+
 .contactUs{
-    display: flex;
+    display:none;
     background-color: #fff;
     padding: 20px;
+    transform: scale(0.98);
+    transition: 0.3s ease;
     gap:20px;
+    max-width:500px;
+    
   
 }
 .contactUs h3{
@@ -1786,40 +1886,2624 @@ distance movers */
 
 }
 .contactUs p{
-    font-size:  18px;
+    font-size:  16px;
     color:#333;
     
 }
-.steps{
+
+
+.rowStep{
     display: flex;
-    flex-direction: column;
-    gap:120px;
+    gap: 40px;
+    align-items: center;
+    height: 150px;
+ 
+    
 }
-.steps p{
-    font-size: 30px;
+
+
+.rowStep p,
+.contactUs{
+    transition: 1.5s ease;
+}
+
+
+
+.contactUs.activeCard {
+  display: flex;
+    transform: translateY(0);
+}
+
+
+.showStep.activeStep {
+  background-color: #000;
+  color: white;
+}
+.steps p.doneStep{
+    background: #d4d0c8;
+    color: white;
+}
+.showStep{
+    color: #fff;
+    display: flex;
+    align-items:center ;
+    padding:10px 20px 10px 20px ;
+    font-size: 25px;
     text-transform: uppercase;
+    text-align:center;
+    background:#d9d4cb;
+    position: relative;
+  
+}
+
+ .rowStep p{
+    position: relative;
+    
+
+ }
+ .rowStep::before{
+    content: "";
+    position: absolute;
+    left: 60px;
+    bottom: 93%;
+    width: 5px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    height: 40px;
+    background-color:#E5E15A;
+}
+.rowStep p::after{
+    content: "";
+    position: absolute;
+    left: 60px;
+    top: 100%;
+    width: 3px;
+    margin-top: 20px;
+    height: 90px;
+    background-color: #c5c1c1;
+}
+
+.rowStep p:last-child::after{
+    display: none;
+} 
+
+ .rowStep:last-child .showStep::after {
+    display: none;
+} 
+
+ .showStep.activeStep::after {
+  background-color: #E5E15A;
+} 
+.rowStep.activeStep .showStep::after {
+    background-color:#c5c1c1;
+}
+
+.containerMovingPlans{
+    padding: 40px;
+    padding-bottom: 130px;
+    padding-top: 130px;
+     background-color:#dcdcdc;
+     
+}
+.containerMovingPlans h1{
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+.movingPlans{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:15px;
+}
+.movingPlans h2{
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.easyMoving{
+    background-color: #fff;
+    padding: 20px;
+    height: 240px;
+}
+ .arrange{
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+.easyMoving .imgEasy{
+    background-color: #dcdcdc;
+    border: 1px solid #dcdcdc;
+    border-radius: 50px;
+    padding: 8px;
+    margin-bottom: 5px;
+    width: 18%;
+}
+.first{
+    background-color: #E5E15A;
+
+}
+.second{
+    background-color: #000;
+    color:#cecbcb;
+}
+.easy{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column: span 2;
+    column-gap: 18px;
+    
+}
+.easy h2{
+    margin-top: 40px;
+}
+.easy .easyImg{
+    width: 100%;
+    height: 200px;
+}
+
+.showStep.activeStep{
+    background:black;
+    color:white;
+}
+
+
+.contactUs img{
+    width:35%;
+    object-fit:cover;
+}
+
+.planningMov h3{
+    margin-bottom:10px;
+}
+
+
+/* About us */
+.aboutUs{
+    margin-top:0px;
+     /* margin-left: 200px;
+    margin-right: 200px;  */
+    margin-bottom: 100px;
+}
+.hHeader h1{
+    text-transform: uppercase;
+    font-size: 40px;
+    margin-top: 100px;
+    padding-left: 250px;
+    margin-bottom: 30px;
+}
+  .alignToCenter{
+       display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      
+    } 
+.aboutContainer{
+     display: flex;
+     align-items: flex-start;
+     justify-content: center;
+     width: 90%;
+  
+}
+.aboutContainer img{
+    width: 340px;
+    max-width: 340px;
+    height: 500px;
+    object-fit: cover;
+}
+.movingDay p{
+    margin-bottom: 20px;
+    width: 500px;
+    max-width: 500px;
+    color: #333;
+    font-size: 15px;
+}
+.moveBoxes{
+    display: flex;
+    margin-top: 40px;
+    gap:20px;
+    width: 850px;
+   
+}
+.moveBoxes img{
+    width: 40%;
+    max-width: 70%;
+    object-fit: cover;
+    height: 400px;
+
+}
+.chooseContainer{
+    display: flex;
+}
+
+
+.whyChoose , .trainedMovers{
+    flex: 0 0 50%;
+    
+}
+.whyChoose{
+    position:  relative;
+    
+}
+.whyChoose .img1{
+     width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.vectorImg{
+    position: absolute;
+    bottom: 400px;
+     transition: transform 0.2s linear;
+}
+.vectorImg.scrollDown{
+     transform: translateY(540px);
+     transition: 0.8s ease;
+}
+.vectorImg img{
+    width: 90%;
+    height: 600px;
+    padding-left: 100px;
+    justify-content: center;
+    display: flex;
+}
+.vectorImg p{
+   text-align: center;
+  
+}
+.insideCare{
+    position: relative;
+}
+.insideCare h1{
+    position: absolute;
+    bottom: 250px;
+    left:25%;
+    text-transform: uppercase;
+    font-size: 40px;
+}
+.trainedMovers{
+   background-color: #fff;
+}
+.train{
+    display: flex;
+    align-items: flex-start;
+    gap:20px;
+    padding: 35px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #000;
+}
+.train h1{
+    margin-top: -12px;
+}
+.train2{
+    background-color:#dddbdb
+}
+.train1{
+    background-color: #E5E15A;
+}
+.handle h1{
+    text-transform: uppercase;
+    margin-bottom: 20px;  
+}
+.handle p{
+    color: #555;
+    width: 80%;
+    font-size: 15px;
+}
+
+/* Pricing page*/
+
+.pricing{
+    margin-top: 50px;
+
+}
+.pricing h1{
+    text-transform: uppercase;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+   
+
+}
+.pricing p{
+    width: 55%;
+    margin-bottom: 40px;
+     color: #363434;
+    font-size:15px;
+    margin-top: 20px;
+}
+.pricingContainer{
+    padding-left: 200px;
+    padding-right: 150px;
+    padding-top: 70px;
+}
+.rating{
+    padding-left: 40px;
+    display: flex;
+    background-color: #f3f3f3;
+    align-items: flex-start;
+    gap:45px;
+}
+.rating ul li{
+    margin-bottom: 35px;
+    font-size: 15px;
+    color:#363434;
+    width: 320px;
+    
+}
+
+.rating img{
+    width: 420px;
+    object-fit: cover;
+    height: 290px;
+}
+.truckfee p{
+    margin-top: 20px;
+    font-size: 15px;
+    color:#363434;
+     width: 420px;
+}
+.packContainer{
+    padding: 70px;
+    padding-top: 110px;
+    padding-bottom: 130px;
+    background-color: #dcdcdc;
+}
+.packContainer h1{
+    text-transform: uppercase;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+.packContainer h5{
+    color:#555;
+    font-size: 15px;
+}
+.pack{
+    margin-top: 40px;
+    display: flex;
+    gap:20px;
+}
+.pack h2{
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-weight: 200;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.pack ul{
+    margin-left: 30px;
+    margin-bottom: 20px;
+    color:#555;
+}
+.pack ul li{
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+.dollars{
+    text-align: center;
+    background-color:#fff;
+    padding: 40px;
+    height: 180px;
+    margin-bottom: 30px;
+}
+.dollars h4{
+    background-color:#f3eded;
+    padding: 5px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: lighter;
+    
+}
+.dollars .first-price{
+    text-decoration: line-through;
+    color: #000;
+    font-weight: lighter;
+
+}
+.dollars .second-price{
+    font-weight: bolder;
+    color: #000;
+    font-size: 30px;
+}
+
+.packAndGo{
+    background-color: #f3eded;
+}
+.packAndGo, .homeSweet, .MapleLifter{
+    padding: 20px;
+    padding-bottom: 30px;
+
+}
+.packAndGo p, .homeSweet p, .MapleLifter p{
+    color: #333;
+    font-size: 14px;
+}
+.backslash{
+    font-size: 23px;
+    
+}
+.homeSweet{
+    background-color: #E5E15A;
+}.homeSweet .dollars h4{
+    background-color:#E5E15A;
+}
+.MapleLifter{
+    background-color: #131313;
+}
+.MapleLifter p{
+    color: #9c9999;
+}
+.MapleLifter ul{
+    color:#9c9999 ;
+}
+.MapleLifter h4{
     background-color: #000;
     color: #fff;
+}
+.MapleLifter .first-price, .MapleLifter .second-price{
+    color: #fff;
+}
+.calculatorContainer{
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+}
+.calculatorContainer h1{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 35px;
+    font-weight:550;
+    
+}
+
+.calculateContainer{
+    justify-content: center;
+    display: flex;
+    margin-top: 50px;
+    
+}
+.calculate h3{
+    color:#333;
+    font-weight: lighter;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+
+.calculator{
+      width:900px;
+      background:#fff;
+      padding:40px 50px;
+      border:1px solid #ddd;
+    }
+
+    .note{
+      text-align:center;
+      font-size:18px;
+      margin-bottom:40px;
+      line-height:1.5;
+    }
+
+    .calculator h2{
+      text-align:center;
+      margin-bottom:20px;
+      font-size:28px;
+    }
+    .button-group{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:12px;
+    margin-bottom:40px;
+}
+
+.bedroom-group{
+    grid-template-columns:repeat(3, 1fr);
+}
+
+    .option-btn{
+      width:100%;
+      height:60px;
+      border:1px solid #cfcfcf;
+      background:white;
+      font-size:18px;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .option-btn.active{
+      background:#d7d2c7;
+    }
+
+    .bottom-section{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      margin-top:20px;
+      flex-wrap:wrap;
+      gap:20px;
+    }
+
+    .service{
+      text-align:center;
+    }
+
+    .service h3{
+      font-size:22px;
+      margin-bottom:15px;
+    }
+
+    .small-buttons{
+      display:flex;
+      gap:10px;
+    }
+
+    .small-btn{
+      width:110px;
+      height:55px;
+      border:1px solid #cfcfcf;
+      background:white;
+      font-size:18px;
+      font-weight:bold;
+      cursor:pointer;
+    }
+
+    .small-btn.active{
+      background:#d7d2c7;
+    }
+
+    .tax input{
+      width:25px;
+      height:25px;
+      background:#d7d2c7;
+    }
+
+    .total-box span{
+      font-size:28px;
+    }
+
+    .price{
+      font-size:40px;
+    }
+.summary-section{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.tax{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.total-box{
+    width:230px;
+    height:70px;
+    background:#e6e35e;
+    border:1px solid #000;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    font-weight:bold;
+}
+
+
+
+/* contact us */
+
+
+  .containerContact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    margin-top: 80px;
+    margin-bottom: 100px;
+    gap: 100px;
+  }
+
+  /* LEFT IMAGE */
+  .map {
+    flex: 1;
+  }
+
+  .map img {
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+  }
+
+  /* RIGHT SECTION */
+  .info {
+    flex: 1;
+  }
+
+  .info h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+
+  .item-service {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+    font-size: 16px;
+  }
+  .item-service img{
+    width: 100%;
+
+  }
+
+  .icon-service{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 5px;
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+  }
+
+  .contact-text {
+    color: #222;
+  }
+
+
+/* 
+  Blog page */
+
+.blogContainer{
+    margin-top: 60px;
+    padding: 80px;
+    width: 70%;
+}
+#loadButton{
+    width: 35%;
+    padding: 15px;
+    margin: 0 auto;
+    background-color:#c2bfbf;
+    border: 1px solid #c2bfbf;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #555;
+    margin-top: 20px;
+}
+.load{
+    display: none;
+}
+.blogContainer h1{
+    text-overflow: clip;
+    text-transform: uppercase;
+    font-size:40px;
+    color: #111;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 30px;
+    font-weight: 200;
+}
+.blog{
+   display: grid;
+   grid-template-columns: repeat(2,1fr);
+    gap:20px;
+  
+}
+.children{
+    background-color: #fff;
+    padding: 30px;
+    position: relative;
+    padding-top: 40px;
+    padding-bottom: 75px;
+}
+.childrenArrow{
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    z-index: 10;
+    background-color:#E5E15A;
     padding: 10px;
+    border: 1px solid #000;
+}
+.children img{
+    width: 100%;
+    height:200px;
+    object-fit: cover;
+    display: block;
+}
+.childrenArrow img{
+    width:100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.blogContainer p{
+    margin-top: 10px;
+}
+
+.blogContainer h3{
+    text-transform: uppercase;
+    margin-top: 20px;
+    font-size: 18px;
+    color:#111;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+}
+
+.blogRow{
+    display: flex;
+}
+.arrowContainer{
+    padding-left: 80px;
+    
+}
+
+/* 
+
+moving with children */
+
+.containerMoving{
+    margin-top: 100px;
+    padding-left: 250px;
+    padding-right: 250px;
+    
+}
+
+.containerMoving .hero{
+    margin-bottom:50px;
+}
+
+.containerMoving .hero h1{
+    font-size:50px;
+    margin-bottom:30px;
+    text-transform: uppercase;
+    width: 100%;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 740px;
+}
+
+.containerMoving .hero p{
+    font-size:18px;
+    max-width:800px;
+    margin-bottom: 10px;
+    color:#333
    
 }
 
-.steps p{
-    position: relative;
-    padding-left: 20px;
-    margin: 20px 0;
+.containerMoving .section{
+    margin-bottom:40px;
+
 }
 
-.steps p::after{
-    content: "";
-    position: absolute;
-    left: 45%;
-    top: 100%;
-    width: 5px;
+.containerMoving .section h2{
+    margin-top: 50px;
+    text-transform: uppercase;
+    margin-bottom:20px;
+    font-size:35px;
+    font-weight: 600;
+}
+
+.containerMoving .section p{
+    max-width:800px;
+    margin-bottom:10px;
+    font-size: 18px;
+    color: #333;
+}
+.containerMoving .imgMov{
+    margin-top: 30px;
+}
+
+.containerMoving .section img{
+    max-width:800px;
+    object-fit:cover;
+    
+}
+.containerMoving .sections{
+   margin-bottom: 80px;
+    
+}
+
+.containerMoving .faq-items{
+    margin-bottom:25px;
+    border: 1px solid #f3f3f3;
+}
+
+.containerMoving .faq-item h3{
+    margin-bottom:10px;
+}
+.containerMoving .faq{
+    margin-bottom: 100px;
+} 
+.sections h2{
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 40px;
+}
+/* 
+faq page */
+
+.underFagContainer{
+    display: flex;
+    justify-content: center;
+    width: 65%;
+    flex-direction: column;
+    margin-bottom: 120px;
+    margin-top: 130px;
+
+    
+}
+.underFagContainer h1{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    
+}
+.underFagContainer h2{
+    font-size: 21px;
+    text-transform: uppercase;
+    font-weight: 100;
+}
+.underFagContainer p{
+    font-size: 17px;
+    color: #333;
+}
+.underFagContainer ul{
     margin-top: 20px;
-    height: 80px;
-    background-color: black;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    font-size: 17px;
 }
-.steps p:last-child::after{
-    display: none;
+
+ 
+
+
+@media screen and (max-width: 1280px){
+    nav h2{
+    font-size: 15px;
+  
+     }
+     nav ul{
+    gap:10px;
+   
+    }
+    nav ul li a{
+    font-size: 8px;
+    }
+    .fa-chevron-down{
+    font-size: 5px;
+    
+    }
+    .new-icon{
+     width: 20px;
+    height: 20px;
+    }
+    .icons p{
+    font-size: 8px;
+    }
+
+    .wrapper {
+    padding: 0 40px;
+    }
+    .icons-style{
+    gap:8px;
+    }
+    .icons{
+        gap:10px;
+    }
+    .home-page{
+    padding-top: 80px;
+    
+    }
+    .home-page h2{
+        font-size: 12px;
+        margin-bottom: 30px;
+    } 
+
+    .container {
+        max-width: 600px;
+    }
+    .container h1{
+        font-size: 30px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight:500;
+    }
+    .container p{
+        margin-top: 10px;
+        font-size: 11px;
+    }
+    .container2 h4{
+    font-size: 14px;
+    margin-top:-30px;
+    margin-left: 8px;
+   
+    }
+    form{
+    row-gap: 10px;
+    }
+    form input{
+        padding: 10px;
+        width: 180px;
+        border-radius: 5px;
+        font-size: 10px;
+        text-align: center;
+    }
+    form input[type="button"]{
+        padding: 8px;
+        font-weight: 600;
+        border-radius: 0px;
+        font-size: 10px;
+    
+    }
+    .images{
+    margin-top: 20px;
+   }
+
+   .main-content {
+    position: relative;
+    z-index: 2;
+    margin-top: 47vh;
+    margin-top: min(47vh, 460px);
+    background:#f3f3f3;
+    }
+
+
+.yellow-page {
+    min-height: 550px;
+    padding: 10px 10px;
 }
+
+.rating {
+    padding: 5px 10px;
+    max-width: 150px;
+    height: 40px;
+}
+    .rating  .ratingImg{
+        width: 40px;
+        height: 30px;
+        margin-left:-10px;
+        margin-top:-1px;
+    }
+    .rating .g {
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .rating p{
+        font-size: 12px;
+    }
+    .rating-content{
+        margin-left: -50px;
+    }
+    .stars img{
+        width: 60px;
+        height: 8px;
+    }
+
+
+    .big-text {
+        font-size: 100px;
+    
+    }
+
+    .big-text span {
+        font-weight: 900;
+        text-shadow: none;
+    }
+
+    .inner {
+        font-size: 18px;
+        font-weight: 500;
+        position: relative;
+        top: -20px;
+        display: inline-block;
+        margin: 0 10px;
+    }
+    .features {
+        list-style: none;
+        margin: 30px 0;
+        padding: 0;
+    }
+
+    .features li {
+        margin: 20px 0;
+        font-size: 12px;
+    }
+
+    .cta {
+        padding: 10px 10px;
+        font-size: 10px;
+        width: 220px;
+    }
+    .cta:hover {
+    opacity: 0.9;
+    }
+
+    .local{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        margin-top: 80px;
+    }
+    .local h1{
+        font-size: 20px;
+    }
+    .local h3{
+        font-size: 10px;
+        color: #555;
+    }
+    .videos{
+        gap:10px;
+    }
+    .stats-section {
+    padding: 90px 20px; 
+    }
+
+    .stats-section h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+    }
+
+    .stats-container {
+    justify-content: center;
+    gap: 20px;
+    }
+
+    .stat {
+    gap: 20px;
+    margin-bottom: 40px;
+    }
+
+    .bracket {
+    font-size: 90px;
+    -webkit-text-stroke: 15px #dcdcdc;
+    }
+
+    .stat h3 {
+    font-size: 50px;
+    }
+
+    .stat p {
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+    }
+
+
+    .services{
+        display: flex;
+        background-color:#dcdcdc;
+        
+    }
+    .services img{
+        width: 50%;
+    }
+    .services .theory{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        gap:20px;
+        padding: 40px;
+    
+    }
+    .services .theory h1{
+        font-size: 25px;
+    
+    }
+    .services .theory p{
+        font-size: 10px;
+    }
+    .moving-services{
+        padding: 40px;
+        padding-right: 30px;
+    }
+    .moves h1{
+        padding-top:10px;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        font-size: 15px;
+        font-weight: 100;
+    }
+    .moves p{
+    font-size: 10px;
+    color: #555;
+    margin-bottom: 10px;
+    }
+    .professional-moving{
+        gap: 150px;
+    }
+
+    .residential-images{
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        gap:20px;
+        margin-top: 45px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    .moves{
+        flex: 0 0 auto; 
+        background-color: #fff;
+        padding:10px;
+        max-width: 220px;
+    
+    }
+    .scroll-controls {
+        position: absolute;
+        right:32px;
+        display: flex;
+        gap: 15px;
+        padding:20px;
+   
+    }
+    .scroll-btn {
+    font-size:0px;
+    }
+
+    .scroll-progress {
+    height: 100%;
+    width: 0%;
+
+    }
+   
+    .linkArrow .linkArrowImg {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+ 
+    }
+  
+    .professional-moving h1,
+    .professional-moving h3 {
+        flex: 1;          
+    }
+
+    .professional-moving h1{
+        font-size: 20px;
+    }
+    .professional-moving h3{
+        font-size: 10px;
+        color: #555;
+    }
+
+    .hire{
+        gap:10px;
+        width: 350px;
+        margin-top: -40px;
+        margin-bottom: 20px;
+    
+    }
+    .hire p{
+        font-size: 10px;
+        color: #363434;
+        width: 50%;
+    }
+    .containerHire{
+        margin-top: -30px;
+    }
+    .imageArrow{
+        bottom: 20px;
+        left: 4%;
+        font-size: 15px;
+        
+    }
+    .arrowContainer{
+    padding-left: 5px;
+    
+    }
+
+    .brackets{
+    gap:15px
+    }
+    .brackets p{
+        font-size: 20px;
+    }
+
+ 
+    .packing-container p{
+        padding-bottom: 20px;
+        padding-top: 10px;
+        padding-left: 30px;
+        padding-right: 60px;
+        font-size: 10px;
+    }
+    .packing-container h1{
+        padding-left: 30px;
+        padding-top: 20px;
+        font-size: 15px;
+        padding-right: 40px;
+
+    }
+    .packing{
+        width: 100%;
+    }
+  
+    .damage p{
+        padding: 6px 60px 0px 30px;
+        font-size: 10px;
+        
+    }
+    .brackets2 .p2{
+        font-size: 22px;
+        margin-left: 15px;
+        margin-top: 15px;
+    
+    }
+    .brackets2 .p1{
+        font-size: 22px;
+        margin-left: 30px;
+        margin-top: 15px;
+    
+    }
+    .brackets2{
+    display: flex;
+    
+    }
+    .inclusive-container{
+    position: relative;
+    display: flex;
+    
+    }
+    .inclusive-container img {
+        width: 100%;
+        object-fit: cover;
+        height: 440px;
+        max-height: 440px;
+    }
+
+
+    .inclusive-services h1{
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+     .inclusive-services p{
+      font-size: 10px;
+    }
+    .packing-theory{
+        height: 440px;
+        max-height: 440px;
+    }
+
+    .container-firstClass{
+        padding: 40px;
+        padding-bottom: 0px;
+        padding-top: 70px;
+    }
+
+    .container-firstClass h1{
+        font-size: 20px;
+    }
+     .container-firstClass p{
+        font-size: 10px;
+        width: 70%;
+        margin-top: -30px;
+    }
+    
+    .firstClass{
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .container-firstClass2:last-child{
+        gap: 30px; 
+    }
+
+    .container-firstClass3{
+        gap: 15px;
+    }
+
+    .container-firstClass3{
+        gap: 15px;
+    }
+
+    .container-firstClass3 li{
+        margin-bottom: 10px;
+        font-size: 10px;
+    }
+    .container-firstClass h2{
+        margin-bottom: 5px;
+        font-size: 15px;
+        font-weight: 200;
+    }
+
+    .container-firstClass p{
+        line-height: 1.6;
+    }
+
+    .icon{
+        font-size: 15px;
+    }
+    .firstClass-image{
+        gap:10px;
+
+    }
+    .class-img{
+        padding: 40px;
+
+    }
+    .proud{
+    padding: 40px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    margin-top: 30px;
+
+    }
+    .proud h1{
+        font-size: 20px;
+        padding-bottom: 30px;
+    }
+
+    .house{
+        display: flex;
+        gap: 20px; 
+    }
+    .west{
+        padding: 20px;
+        height: 120px;
+    }
+    .west h2{
+        font-size: 15px;
+        font-weight: 100;
+    }
+    .west p{
+        margin-top: 14px;
+        font-size: 10px;
+        width: 70%;
+    }
+     .serve-areas{
+        padding: 40px;
+        padding-top: 100px;
+    } 
+    .area{
+        display: flex;
+        align-items: flex-start;
+        gap: 100px;
+
+    }
+    .area h1{
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    .moovyCalculator{
+    width: 40%;
+    }
+    .moovyCalculator{
+        font-size: 9px;
+        color: #363434;
+    }
+    
+    .rightArrow img{
+        width: 40%;
+    }
+    .arrowContainer{
+        padding: 2px;
+        padding-top: 0px;
+    }
+
+    .moovyPack{
+        margin-top: 70px;
+    }
+    .moovy-images{
+        gap:20px;
+    }
+    .moovy-images img{
+        height: 200px;
+    }
+    .scrolly{
+        margin-top: -50px;
+        margin-right:0px;
+        gap: 5px;
+        
+    }
+    .scrolly img{
+        width: 70%;
+        background:none;
+    }
+
+    .faq-header h2{
+        font-size:14px;
+    }
+    .faq-content {
+        font-size: 10px;
+    }
+
+    .footer{
+        background: hsl(0, 0%, 7%);
+        color: #fff;
+        padding: 40px 40px 30px;
+        font-family: 'Montserrat', sans-serif;
+        bottom: 0;
+        height: 300px;
+    
+    }
+
+    .footer-container{
+        display: flex;
+        justify-content:space-between;
+        gap:5px;
+        flex-wrap: wrap;
+    }
+
+    .footer-col{
+        flex: 1;
+        min-width: 100px;
+    }
+
+    .footer-logo{
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+
+    .footer-col h3{
+        margin-bottom: 15px;
+        font-size: 15px;
+    }
+
+    .footer-col ul{
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-col ul li{
+        margin-bottom: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+        font-size: 10px;
+    }
+
+    .footer p{
+        font-size: 10px;
+        width: 60%;
+    }
+
+    .copyright{
+        margin-top: 20px;
+        font-size: 10px;
+        color: #aaa;
+    }
+
+    .footer-bottom{
+        border-top: 1px solid #333;
+        margin-top: 10px;
+        padding-top: 20px;
+        display: flex;
+        gap:450px;
+        justify-content: space-between;
+        flex-wrap:nowrap;
+        font-size: 10px;
+        color: #aaa;
+    } 
+
+    /* residentialMove.html page css */
+
+
+    .residentialPage{
+        padding: 50px;
+        padding-right: 30px;
+        padding-top:50px;
+        display: flex;
+        justify-content:space-between;
+        align-items: flex-start;
+        margin-bottom:5px;
+        gap:60px;
+
+    }
+    .residentialPage h1{
+        margin-bottom:5px;
+        font-size: 30px;
+        width: 350px;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight:100;
+        -webkit-text-stroke: 1px #1a1a1a;
+        
+        
+    }
+    .estimate{
+        margin-top: 20px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-left: 30px;
+        flex-direction: column;
+    }
+    .estimate h4{
+        margin-bottom: 20px;
+        text-align:center ;
+        font-size: 14px;
+        color: #222;
+    }
+    .estimate-inside{
+        background-color: #fff;
+        padding: 30px;
+    }
+    .residential p{
+        width:300px;
+        max-width: 700px;
+        font-size: 10px;
+        text-align: center;
+    }
+    .residential {
+    max-width: 250px;
+    }
+
+    .houseRes img {
+     width: clamp(330px, 50vw, 300px);
+    height: auto;
+    aspect-ratio: 350 / 290;
+    display: block;
+    object-fit: cover;
+    }
+
+    .insidePage{
+        padding: 40px;
+        gap: 40px;
+        padding-top: 50px;
+        
+    }
+
+    .theoryPage h1{
+    font-size: 22px;
+    text-transform: uppercase;
+    }
+    .theoryPage p{
+        font-size: 10px;
+        width: 100%;
+        color: #363434;
+    }
+
+    .containerItems{
+        margin-top: 40px;
+        padding: 40px;
+    }
+
+    .items h1{
+        font-size: 20px;
+        font-weight: 100;
+        width: 90%;
+    }
+    .items{
+        display: flex;
+        justify-content: center;
+        gap:10px;
+        margin-bottom: 90px;
+    }
+    .item2{
+        flex:1;
+
+    }
+    .item, .item{
+        padding: 20px;
+        height: 100px;
+        max-height: 150px;
+
+    }
+    .moversItems{
+        gap:10px;
+        margin-top: 50px;
+    }
+    .item3{
+        margin-top: 47px;
+    }
+    .items h2{
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+    .item p{
+        font-size: 10px;
+    }
+    .theoryItem{
+        font-size: 10px;
+        margin-top: -23px;
+    }
+    .item4{
+        margin-top: 40px;
+    }
+    .containerHire {
+        width: 595px
+    
+    }
+    .heavy{
+        background-color: #E5E15A;
+    }
+
+    .prep2{
+        padding:40px;
+    }
+    .prep p{
+        font-size: 10px;
+    }
+    .prep2 h1{
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .insuranceContainer{
+        background-color: #E5E15A;
+    }
+    .insurance{
+        padding: 120px;
+        padding-top: 70px;
+        padding-bottom: 80px;
+    }
+    .insurance img{
+        margin-bottom: 18px;
+        width: 6%;
+    }
+    .insurance p{
+        font-size:10px;
+        width: 100%;
+    }
+
+    .insurance h1{
+    font-size:20px;
+    margin-bottom: 20px;
+    }
+ 
+    .toronto{
+        padding: 40px;
+    
+    }
+    .toronto p{
+        font-size: 10px;
+        color: #363434;
+    }
+    .toronto h1{
+        margin-bottom: 20px;
+        font-size: 20px;
+    }
+
+    .boxingContainer{
+        margin-top: 50px;
+        padding:40px;
+    }
+    .boxing-headers p{
+        width: 45%;
+        font-size: 10px;
+    }
+    .boxing-headers h1{
+        font-size:20px;
+          width: 30%;
+    }
+    .boxingFurniture{
+        margin-top: 30px;
+        gap:10px;
+    }
+    .stuff{
+        padding:20px;
+    }
+    .stuff h1, .stuff2 h1{
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+    .stuff ul, .stuff2 ul{
+        font-size: 10px;
+        margin-bottom: 20px;
+    }
+    .stuff, .stuff2{
+        height: 280px;
+    }
+    .stuff p, .stuff2 p{
+        font-size: 10px;
+    }
+    .stuff2{
+        padding:20px;
+    }
+
+    .urgentContainer{
+        margin-top: 30px;
+    }
+    .houseService{
+        padding:40px;
+        gap:30px;
+    }
+    .imageService{
+        gap: 10px;
+        width: 90%;
+    }
+    .imageService img{
+    width: 100%;
+    }
+    .theoryHouseService{
+    width: 100%;
+    }
+    .theoryHouseService h1{
+        font-size: 25px;
+        width: 80%;
+        margin-bottom: 20px;
+    }
+    .theoryHouseService p{
+        margin-bottom: 10px;
+        font-size: 10px;
+    }
+    .inclusive-service{
+        gap:40px;
+    }
+    .inclusiveContainer{
+        padding:40px;
+    }
+    .inclusive-service h1{
+        font-size: 20px;
+    }
+    .tools p{
+        margin-bottom: 10px;
+        font-size: 10px;
+    }
+
+    .fixTools{
+        margin-top: 30px;
+        display: flex;
+        gap:10px;
+    }
+    .fixTools .img1{
+        width: 35%;
+        height:200px;
+        object-fit: cover;
+    }
+    .fixTools .img2{
+        width: 40%;
+        height:200px;
+        object-fit: cover;
+    }
+    .fixTools .img3{
+        width: 35%;
+        height:200px;
+        object-fit: cover;
+    }
+    .movingProcess{
+        padding: 40px;
+        margin-top: -50px;
+    }
+
+
+
+    /* 
+
+    Apartment Movers  css*/
+
+    .thirdPage{
+        padding: 40px;
+        margin-top: 30px;
+    }
+    .thirdPageContainer{
+        gap:40px;
+
+    }
+    .thirdPageContainer img{
+        margin-bottom: 40px;
+        object-fit: contain;
+    }
+    .thirdPageContainer h1{
+        font-size: 20px;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    .thirdPageContainer p{
+        margin-bottom: 20px;
+        font-size: 10px;
+        
+    
+    }
+    .thirdPageContainer  li{
+        margin-bottom: 10px;
+        margin-left: 0px;
+        padding:10px;
+        font-size: 10px;
+        width: 100%;
+        display: inline-block;
+        
+    }
+  
+    .home-mov{
+        display: flex;
+        align-items: center;
+        background-color: rgb(240, 214, 188);
+    }
+    .home-mov img{
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .home-theory{
+        padding: 40px;
+    }
+
+    .home-mov h1{
+        font-size:25px;
+        margin-bottom: 20px;
+    }
+    .home-mov p{
+        margin-top: 20px;
+        font-size: 10px;
+        display: inline-block;
+    }
+    .reliable{
+        padding: 40px;
+        margin-top: 50px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap:10px;
+    }
+    .reliable img{
+        width: 100%;
+        height: 250px;
+        object-fit: contain;
+    }
+    .goal{
+        width: 45%;
+    }
+    .goal h1{
+        text-transform:uppercase;
+        font-size: 20px;
+        margin-bottom: 10px;
+        font-weight: 100;
+    }
+    .goal p{
+        margin-top: 10px;
+        font-size: 10px;
+
+    }
+
+    .bookingContainer{
+        background-color: #E5E15A;
+        padding: 40px;
+        padding-bottom: 40px;
+    }
+ 
+    .bookings h1{
+        margin-top: 10px;
+        font-size: 22px;
+        margin-bottom: 20px;
+        width: 50%;
+        text-align: center;
+        font-weight: 100;
+    }
+    .bookings p{
+        margin-bottom: 40px;
+        font-size: 10px;
+        width: 60%;
+        text-align: center;
+    }
+    .bookingImage{
+        gap:10px;
+        width: 40%;
+    }
+    .bookingImage img{
+         width: 100%;
+        height: 200px;
+        object-fit: fill; 
+    
+    }
+    .apartment-plus{
+        padding: 40px;
+        margin-top: 0px;
+    }
+
+
+
+    /* 
+    commercial movers */
+
+    .officeContainer{
+        padding: 40px;
+        margin-top: 20px;
+    }
+    .office{
+        gap:20px;
+    }
+    .officeMovers1{
+        padding: 20px;
+        padding-top: 20px;
+        
+    }
+
+    .officeMovers1 h1{
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .officeMovers1 img{
+        width: 100%;
+        height: 130px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+
+    }
+    .officeMovers p{
+        margin-bottom: 30px;
+        font-size: 10px;
+    }
+    .officeMovers{
+        padding-right: 20px;
+    }
+    .officeMovers1 p{
+        font-size: 10px;
+    }
+    .officeMovers ul{
+        margin-bottom: 30px;
+        font-size: 10px;
+    }
+    .officeMovers li{
+        margin-bottom: 10px;
+        padding: 15px;
+    }
+    .industrialContainer{
+        margin-top: 30px;
+        padding: 40px;
+        gap:20px; 
+        align-items: flex-start;
+    }
+
+    .industrialContainer img{
+    width: 95%;
+    height: 160px;
+    object-fit: fill;
+    }
+    .industrialContainer h1{
+        font-size: 20px;
+        margin-bottom: 0px;
+
+    }
+    .industrialContainer p{
+        margin-bottom:0px;
+        font-size: 10px;
+    }
+    .industrialContainer ul{
+        margin-left: 15px;
+        font-size: 10px;
+    }
+    .industrial{
+        gap:10px;
+    }
+    .companyContainer{
+        gap:20px;
+        padding: 40px;
+        align-items: flex-start;
+    }
+    .companyContainer img{
+        width: 100%;
+    }
+    .company p{
+        font-size: 10px;
+        color: #333;
+        margin-bottom: 10px;
+    }
+    .company h1{
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+    .company ul{
+        margin-left: 16px;
+        margin-bottom: 10px;
+        color: #333;
+        list-style: square;
+        font-size: 10px;
+    }
+    .company {
+        flex: 0 0 50%;
+    }
+    .company2{
+        padding-right: 10px;
+    }
+
+
+    /* 
+    distance movers */
+   
+    .spares img{
+        width: 100%;
+        height: 400px;
+    }
+    .spares1{
+        padding:40px;
+        padding-top: 70px;
+        
+    }
+    .spares1 h1{
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .spares1 p{
+        font-size: 10px;
+    }
+    .sparesContainer ul{
+        margin-left: 12px;
+        font-size: 10px;
+    }
+    .pricing{
+        margin-top:10px;
+
+    }
+    .sparesContainer ul li{
+        margin-bottom:20px;
+    }
+    .spares1 span{
+        color: #000;
+    }
+    .spares p{
+    margin-top: 30px;
+    padding: 20px;
+    font-size: 10px;
+    }
+
+
+    .mileContainer{
+        margin-top: 40px;
+        padding: 40px;
+    }
+    .longHaul{
+        display: flex;
+        justify-content: space-between;
+        gap:100px;
+        align-items: flex-start;
+    }
+    .longHaul h1{
+        font-size: 25px;
+        margin-bottom: 40px;
+
+    }
+    .longHaul p{
+        font-size: 10px;
+    }
+    .anyDay{
+        row-gap:10px;
+        column-gap:10px;
+    }
+    .day{
+        padding:15px;
+    }
+    .day p{
+        font-size: 10px;
+    }
+    .day h1{
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+
+
+    /*how we work style
+    */
+
+    .workContainer{
+        margin-top: 100px;
+    }
+    .workContainer h1{
+        font-size: 25px;
+        font-weight: 200;
+    }
+
+    .works{
+    position: relative;
+    gap:0px;
+    margin-top: 50px;
+    margin-bottom:50px;
+    }
+    .contactUs{
+        padding:10px;
+        gap:10px;
+        max-width:300px;
+    }
+    .contactUs h3{
+        font-weight: 400;
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+    .contactUs p{
+        font-size:  10px;
+        color:#333; 
+    }
+    .rowStep{
+        gap: 25px;
+        height: 100px;
+    }
+    .showStep{
+        padding:8px 15px 8px 15px ;
+        font-size: 15px;
+    
+    }
+
+    .rowStep p{
+        position: relative;
+        
+
+    }
+    .rowStep::before{
+        left: 40px;
+        bottom: 90%;
+        width: 1px;
+        height: 40px;
+    }
+    .rowStep p::after{
+        left: 40px;
+        top: 70%;
+        width: 1px;
+        margin-top: 20px;
+        height:50px;
+    }
+    .containerMovingPlans{
+        padding: 40px;
+        padding-bottom: 80px;
+        padding-top: 80px;
+        
+    }
+    .containerMovingPlans h1{
+        margin-bottom: 40px;
+        font-size: 20px;
+    }
+
+    .containerMovingPlans h1{
+    margin-bottom: 40px;
+   
+    }
+    .movingPlans{
+        gap:10px;
+    }
+    .movingPlans h2{
+        margin-bottom: 10px;
+    }
+    .easyMoving{
+        padding:15px;
+        height: 150px;
+    }
+    .easyMoving .imgEasy{
+        margin-left:0px;
+        padding:5px;
+        width: 25%;
+    }
+    .easyMoving h2{
+        font-size: 12px;
+    }
+    .easyMoving p{
+        font-size: 10px;
+    }
+   
+    .easy{
+        column-gap: 18px;
+    }
+    .easy h2{
+        margin-top: 40px;
+    }
+    .easy .easyImg{
+        height: 120px;
+        object-fit:fill;
+    }
+    .contactUs img{
+        width:35%;
+        object-fit:cover;
+    }
+
+    .planningMov h3{
+        margin-bottom:10px;
+    }
+
+
+    /* About us */
+    .aboutUs{
+        margin-top: 120px;
+        margin-bottom: 100px;
+         width: 100%;  
+         box-sizing: border-box;
+        
+    }
+    .alignToCenter{
+       display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      
+    }   
+    /* .aboutUs h1{
+        text-transform: uppercase;
+        font-size: 20px;
+        padding-right: 430px;
+    } */
+     .hHeader h1{
+    font-size: 20px;
+    margin-top: 100px;
+    padding-left: 120px;
+   
+}
+    .aboutContainer{
+        display: flex;
+        align-items: flex-start;
+        width: 70%;
+       
+        
+    }
+    .aboutContainer img{
+        width: 220px;
+        max-width: 340px;
+        height: 310px;
+        object-fit: cover;
+        
+    }
+    .movingDay p{
+        margin-bottom: 20px;
+        width:95%;
+        color: #333;
+        font-size: 10px;
+        margin-bottom: 10px;
+    }
+    .movD p{
+        width:300px;
+        position: relative;
+        margin-bottom: 10px;
+       
+    }
+    .moveBoxes{
+        display: flex;
+        margin-top: 20px;
+        align-items: flex-start;
+        width: 70%;
+        gap:15px;
+       
+    }
+  
+    .moveBoxes img{
+        width:40%;
+        max-width: 90%;
+        object-fit: cover;
+        height: 250px;
+
+    }
+    .chooseContainer{
+        display: flex;
+    }
+    .whyChoose , .trainedMovers{
+        flex: 0 0 50%;
+        
+    }
+    .whyChoose{
+        position:  relative;
+    }
+    .whyChoose .img1{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .vectorImg{
+    position: absolute;
+    bottom: 100px;
+    transition: transform 0.2s linear;
+
+    }
+    .vectorImg.scrollDown{
+        transform: translateY(0px);
+        transition: 0.8s ease;
+    }
+    .vectorImg img{
+        width: 90%;
+        height: 600px;
+        padding-left: 50px;
+        justify-content: center;
+        display: flex;
+    }
+    .vectorImg p{
+    text-align: center;
+    
+    }
+    .insideCare h1{
+        bottom: 275px;
+        left:25%;
+        font-size: 20px;
+    }
+    .train{
+        gap:20px;
+        padding:20px;
+        padding-top:20px;
+        padding-bottom:10px;
+    }
+    .train h1{
+        margin-top: -12px;
+    }
+   
+    .handle h1{
+        margin-bottom: 10px; 
+        margin-top:1px;
+        font-size: 20px; 
+    }
+    .handle p{
+        width: 80%;
+        font-size: 10px;
+    }
+
+
+    /* Pricing page*/
+
+    .pricing{
+        margin-top: 50px;
+
+    }
+    .pricing h1{
+        font-size:20px;
+    }
+    .pricing p{
+        width: 55%;
+        margin-bottom: 20px;
+        font-size:10px;
+        margin-top: 20px;
+    }
+    .pricingContainer{
+        padding-left: 100px;
+        padding-right: 50px;
+        padding-top: 50px;
+    }
+    .rating{
+        padding-left: 40px;
+        display: flex;
+        background-color: #f3f3f3;
+        align-items: flex-start;
+        gap:45px;
+    }
+    .rating ul li{
+        margin-bottom: 15px;
+        font-size: 10px;
+        color:#363434;
+        width: 320px;
+        
+    }
+    .rating ul{
+    margin-left: -20px;
+}
+    .rating img{
+        width: 220px;
+        object-fit: cover;
+        height: 200px;
+    }
+    .truckfee p{
+        margin-top: 20px;
+        font-size: 10px;
+        width: 220px;
+    }
+    
+
+    .packContainer{
+        margin-top: 300px;
+        padding: 40px;
+        padding-top: 70px;
+        padding-bottom: 130px;
+        background-color: #dcdcdc;
+    }
+    .packContainer h1{
+        font-size:20px;
+        margin-bottom: 10px;
+    }
+    .packContainer h5{
+        color:#555;
+        font-size: 15px;
+    }
+    .pack{
+        margin-top: 40px;
+        display: flex;
+        gap:10px;
+    }
+    .pack h2{
+        font-weight: 200;
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+    .pack ul{
+        margin-left: 15px;
+        margin-bottom: 10px;
+    }
+    .pack ul li{
+        font-size: 10px;
+        margin-bottom:5px;
+    }
+    .dollars{
+        padding:20px;
+        height: 120px;
+        margin-bottom: 10px;
+    }
+    .dollars h4{
+        padding: 5px;
+        font-size: 10px;
+        
+    }
+    .dollars .first-price{
+        font-size: 10px;
+
+    }
+    .dollars .second-price{
+        font-size: 20px;
+    }
+
+    .packAndGo, .homeSweet, .MapleLifter{
+        padding: 10px;
+        padding-bottom: 20px;
+
+    }
+    .packAndGo p, .homeSweet p, .MapleLifter p{
+        font-size: 10px;
+    }
+    .backslash{
+        font-size: 18px;
+        
+    }
+   
+    .calculatorContainer{
+        margin-top: 60px;
+        margin-bottom: 100px;
+
+    }
+    .calculatorContainer h1{
+        font-size: 20px;
+    }
+
+    .calculateContainer{
+        justify-content: center;
+        display: flex;
+        margin-top: 50px;
+        
+    }
+    .calculate h3{
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+
+    .calculator{
+        width:600px;
+        padding:40px 50px;
+    }
+
+    .note{
+      text-align:center;
+      font-size:18px;
+      margin-bottom:40px;
+      line-height:1.5;
+    }
+
+    .calculator h2{
+      text-align:center;
+      margin-bottom:20px;
+      font-size:28px;
+    }
+    .button-group{
+    grid-template-columns:repeat(1, 1fr);
+    gap:12px;
+    margin-bottom:40px;
+    }
+
+    .bedroom-group{
+        grid-template-columns:repeat(1, 1fr);
+    }
+
+    .option-btn{
+      width:100%;
+      height:60px;
+      border:1px solid #cfcfcf;
+      background:white;
+      font-size:18px;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+
+    .bottom-section{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction: column;
+      margin-top:20px;
+      flex-wrap:wrap;
+      gap:20px;
+    }
+
+    .service{
+      text-align:center;
+    }
+
+    .service h3{
+      font-size:22px;
+      margin-bottom:15px;
+    }
+
+    .small-buttons{
+      display:flex;
+      flex-direction: column;
+      gap:10px;
+    }
+
+    .small-btn{
+      width:500px;
+      border:1px solid #cfcfcf;
+      background:white;
+      font-size:18px;
+      font-weight:bold;
+      cursor:pointer;
+    }
+
+    .small-btn.active{
+      background:#d7d2c7;
+    }
+
+    .tax input{
+      width:25px;
+      height:25px;
+      background:#d7d2c7;
+    }
+
+        .total-box span{
+        font-size:28px;
+        }
+
+        .price{
+        font-size:40px;
+        }
+    .summary-section{
+        display:flex;
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .tax{
+        display:flex;
+        align-items:center;
+        gap:15px;
+        font-size:20px;
+        font-weight:bold;
+    }
+
+    .total-box{
+        width:500px;
+        height:70px;
+        gap:15px;
+    }
+
+
+
+
+    
+
+
+
+
+
+
+    
+
+
+        
+  
+
+
+   
+
+}
+
+
+
+
+
+
+
+
+
+/* 
+@media (max-width: 1024px){
+   .childrenArrow{
+      bottom: 5px;
+   }
+}
+
+@media (max-width: 768px){
+   .childrenArrow{
+      bottom: 30px;
+   }
+} */
+
